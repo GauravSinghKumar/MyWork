@@ -1,0 +1,16 @@
+var summaryTQ = [{"Country":"India","CountryCode":"","Province":"","City":"","CityCode":"","Lat":"0","Lon":"0","Confirmed":1,"Deaths":0,"Recovered":0,"Active":1,"Date":"2020-01-30T00:00:00Z"},{"Country":"India","CountryCode":"","Province":"","City":"","CityCode":"","Lat":"0","Lon":"0","Confirmed":1,"Deaths":0,"Recovered":0,"Active":1,"Date":"2020-01-31T00:00:00Z"}]
+     var summary = [];
+     var datastng= JSON.stringify(summaryTQ);
+     var dataprs = JSON.parse(datastng);
+     
+     for(var i = 0; i < summaryTQ.length; i++) {  
+
+              var summaryobj = {};
+                
+                summaryobj.country = dataprs[i].Country;
+                summaryobj.confirmed = dataprs[i].Confirmed;
+                summaryobj.deaths = dataprs[i].Deaths;
+                summaryobj.Recovered = dataprs[i].Recovered;
+                summaryobj.date = dataprs[i].Date;
+                summary[i] = summaryobj;
+                } gs.addInfoMessage(JSON.stringify(summary));
